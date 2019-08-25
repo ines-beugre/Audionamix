@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,6 +18,10 @@ function App() {
         >
           Learn React
         </a>
+        <p>create your app</p>
+        <p>create your app</p>
+        <p>your nice app</p>
+        <p>you can do if you want</p>
       </header>
     </div>
   );
