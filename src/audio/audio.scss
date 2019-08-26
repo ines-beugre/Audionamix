@@ -1,17 +1,25 @@
 .audio {
-  background: aquamarine;
   .audio-unique {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    label {
+      font-size: 1em;
+    }
   }
+
+  button {
+    border: white;
+    background: white;
+    .fas {
+      color: #3DB8D8;
+      font-size: 3em;
+
+    }
+
+  }
+
 }
 
-//@media screen and (max-width: 450px){
-//    .audio {
-//      .audio-unique {
-//        background: #61dafb;
-//      }
-//    }
-//}

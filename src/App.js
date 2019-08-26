@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Audio from './audio/audio';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 class App extends Component {
 
@@ -15,11 +16,13 @@ class App extends Component {
             <div className="App">
 
                 <header className="App-header ">
-                    <h5>Hello to Audionamix</h5>
+                    <p>Hello to Audionamix</p>
                 </header>
 
                 <main className="app-main">
                     <Audio/>
+                    {/*<i className="fas fa-power-off"/>*/}
+
                 </main>
             </div>
         );

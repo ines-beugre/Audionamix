@@ -42,7 +42,7 @@ export default class Audio extends Component {
                     </div>
 
                     <div>
-                        <Uploader label="Télécharger la voix " onUpload={this.handleVoiceUpload}/>
+                        <Uploader label="Télécharger la voix" onUpload={this.handleVoiceUpload}/>
                         <AudioPlayer
                             file={voice}
                             ref={instance => this.voicePlayer = instance}
@@ -50,7 +50,7 @@ export default class Audio extends Component {
                     </div>
                 </div>
 
-                <button onClick={this.handlePlay}>Lire</button>
+                <button onClick={this.handlePlay}><i className="fas fa-play"/> </button>
             </div>
         )
 

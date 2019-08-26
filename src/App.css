@@ -4,13 +4,19 @@
 
 .App-header {
   background-color: white;
-  /*min-height: 100vh;*/
-  /*display: flex;*/
+  display: flex;
   /*flex-direction: column;*/
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /*font-size: calc(10px + 2vmin);*/
   color: black;
+  margin-bottom: 50px;
+}
+
+.App-header p {
+  color: #3DB8D8;
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
 }
 
 .app-main {
@@ -19,7 +25,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: black;
 }
 
