@@ -1,52 +1,47 @@
 import React, {Component} from 'react';
 import './audio.scss';
-
+import Uploader from './uploader';
+import AudioPlayer from "./audio-player";
 export default class Audio extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            file: ""
+            file: "",
+            music: "",
+            voice: "",
+            files:[]
         }
     }
 
-    handleUpload = (e) => {
-        // Récupère le fichier téléchargé de la balise input
-        const files = e.target.files;
+    handleMusicUpload = (file) => {
+        this.setState({...this.state, music: file});
+    }
 
-        let reader = new FileReader();
-        // Permet de lire le fichier téléchargé
-        reader.readAsDataURL(files[0]);
+    handleVoiceUpload = (file) => {
+        this.setState({...this.state, voice: file});
+    }
 
-        // Permet d'effectuer une action une fois le téléchargement du fichier terminé
-        reader.onload = (e) => {
-            console.log(e.target.result);
-            //Enregistre le resultat du téléchargement dans le state
-            this.setState({file: e.target.result});
-        }
+    handlePlay = (e) => {
+        e.preventDefault();
     }
 
     render() {
-
+        const {music, voice} = this.state;
         return (
             <section>
                 <div>
-                    <input type="file" onChange={this.handleUpload}/>
-                    <input type="file" onChange={this.handleUpload}/>
+                    <Uploader label="Télécharger la musique " onUpload={this.handleMusicUpload}/>
+                    <Uploader label="Télécharger la voix " onUpload={this.handleVoiceUpload}/>
                 </div>
 
-                <figure>
-                    <figcaption></figcaption>
-                    <audio
-                        controls
-                        src={this.state.file}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
-                </figure>
-
+                <AudioPlayer
+                   file={music}
+                   onPlay={this.handlePlay}
+                />
             </section>
         )
 
     }
 }
+
