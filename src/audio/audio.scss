@@ -1,0 +1,50 @@
+.audio {
+  .audio-liste {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .audio-unique {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    label {
+      font-size: 1em;
+    }
+
+  }
+
+  button {
+    border: white;
+    background: white;
+
+    .fas {
+      color: #3DB8D8;
+      font-size: 3em;
+
+    }
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .audio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .audio-liste {
+
+      .audio-unique {
+          margin-bottom: 20px;
+      }
+    }
+
+  }
+}
