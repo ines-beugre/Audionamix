@@ -15,6 +15,10 @@ export default class AudioPlayer extends Component {
             });
     }
 
+    handlePause = () => {
+        this.audio.pause();
+    }
+
     render() {
         const {file} = this.props;
         return (
