@@ -20,8 +20,6 @@ class App extends Component {
 
                 <main className="app-main">
                     <Audio/>
-                    {/*<Audio/>*/}
-
                 </main>
             </div>
         );

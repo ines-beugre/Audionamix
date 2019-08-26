@@ -1,3 +1,17 @@
 .audio {
-
+  background: aquamarine;
+  .audio-unique {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
+
+//@media screen and (max-width: 450px){
+//    .audio {
+//      .audio-unique {
+//        background: #61dafb;
+//      }
+//    }
+//}

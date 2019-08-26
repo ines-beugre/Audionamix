@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './uploader.scss';
 export default class Uploader extends Component {
 
     constructor(props) {
@@ -7,10 +7,12 @@ export default class Uploader extends Component {
     }
 
     handleChange = (e) => {
-        const files = e.target.files; // Récupère le fichier téléchargé de la balise input
-
+        // Récupère le fichier téléchargé de la balise input
+        const files = e.target.files;
         let reader = new FileReader();
-        reader.readAsDataURL(files[0]); // Permet de lire le fichier téléchargé (le premier)
+
+        // Permet de lire le fichier téléchargé (le premier)
+        reader.readAsDataURL(files[0]);
 
         // Permet d'effectuer une action une fois le téléchargement du fichier terminé
         reader.onload = (e) => {
@@ -20,7 +22,7 @@ export default class Uploader extends Component {
 
     render() {
         return(
-            <div>
+            <div className="uploader">
                 <label>
                     {this.props.label}
                     <input type="file" onChange={this.handleChange} />

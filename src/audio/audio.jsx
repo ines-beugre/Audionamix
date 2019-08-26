@@ -24,22 +24,34 @@ export default class Audio extends Component {
 
     handlePlay = (e) => {
         e.preventDefault();
+        this.musicPlayer.handlePlay();
+        this.voicePlayer.handlePlay();
     }
 
     render() {
         const {music, voice} = this.state;
         return (
-            <section>
-                <div>
-                    <Uploader label="Télécharger la musique " onUpload={this.handleMusicUpload}/>
-                    <Uploader label="Télécharger la voix " onUpload={this.handleVoiceUpload}/>
+            <div className="audio">
+                <div className="audio-unique">
+                    <div>
+                        <Uploader label="Télécharger la musique " onUpload={this.handleMusicUpload}/>
+                        <AudioPlayer
+                            file={music}
+                            ref={instance => this.musicPlayer = instance}
+                        />
+                    </div>
+
+                    <div>
+                        <Uploader label="Télécharger la voix " onUpload={this.handleVoiceUpload}/>
+                        <AudioPlayer
+                            file={voice}
+                            ref={instance => this.voicePlayer = instance}
+                        />
+                    </div>
                 </div>
 
-                <AudioPlayer
-                   file={music}
-                   onPlay={this.handlePlay}
-                />
-            </section>
+                <button onClick={this.handlePlay}>Lire</button>
+            </div>
         )
 
     }

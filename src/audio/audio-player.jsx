@@ -6,6 +6,15 @@ export default class AudioPlayer extends Component {
         super();
     }
 
+    handlePlay = () => {
+        this.audio.play().then(() => {
+            console.log("---");
+        })
+            .catch((error) => {
+                console.log("Erreur: " +error);
+            });
+    }
+
     render() {
         const {file} = this.props;
         return (
@@ -13,6 +22,7 @@ export default class AudioPlayer extends Component {
                 <figure>
                     <figcaption></figcaption>
                     <audio
+                        ref={instance => this.audio = instance}
                         controls
                         src={file}
                     >
